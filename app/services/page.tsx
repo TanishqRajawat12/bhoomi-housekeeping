@@ -39,20 +39,6 @@ const services = [
     afterImage: "/images/services/home-after.jpg",
   },
   {
-    title: "Bathroom Cleaning",
-    description: "Specialized bathroom deep cleaning including tiles, fixtures, and hard water stain removal. Sparkling results guaranteed.",
-    icon: "bathroom",
-    beforeImage: "/images/services/bathroom-before.jpg",
-    afterImage: "/images/services/bathroom-after.jpg",
-  },
-  {
-    title: "Kitchen Cleaning",
-    description: "Comprehensive kitchen cleaning covering cabinets, appliances, countertops, and exhaust systems. Grease-free and hygienic kitchens.",
-    icon: "kitchen",
-    beforeImage: "/images/services/kitchen-before.jpg",
-    afterImage: "/images/services/kitchen-after.jpg",
-  },
-  {
     title: "Solar Panel Cleaning",
     description: "Professional solar panel cleaning to maximize energy efficiency. Safe techniques that protect your investment.",
     icon: "solar",

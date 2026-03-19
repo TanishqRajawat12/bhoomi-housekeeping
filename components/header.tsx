@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-25 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-22 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image 
@@ -28,7 +28,7 @@ export function Header() {
             alt="Bhoomi's Housekeeping Logo" 
             width={340} 
             height={170}
-            className="h-14 w-auto sm:h-16 lg:h-21"
+            className="h-14 w-auto sm:h-16 lg:h-16"
             priority
           />
         </Link>

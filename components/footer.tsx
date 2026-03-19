@@ -27,10 +27,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <Image 
-                src="/images/logo.png" 
-                alt="Bhoomi's Housekeeping Logo" 
-                width={400} 
+              <Image
+                src="/images/logo.png"
+                alt="Bhoomi's Housekeeping Logo"
+                width={400}
                 height={200}
                 className="h-40 w-auto"
               />
@@ -95,7 +95,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            {"© 2026 Bhoomi's Housekeeping. All rights reserved."}
+            {"© 2026 Bhoomi's Housekeeping. All rights reserved."} Powered by <a target="#" href="https://rajputanards.com"><u>Q Engine</u></a>
           </p>
         </div>
       </div>

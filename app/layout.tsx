@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Bhoomi's Housekeeping",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Bhoomi's Housekeeping - Premium Cleaning Services in Jaipur",

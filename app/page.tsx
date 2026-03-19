@@ -2,10 +2,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ServiceCard } from "@/components/service-card"
 import { TestimonialCard } from "@/components/testimonial-card"
-import { 
-  Sparkles, 
-  Shield, 
-  Clock, 
+import {
+  Sparkles,
+  Shield,
+  Clock,
   Users,
   ArrowRight,
   CheckCircle2
@@ -20,18 +20,11 @@ const featuredServices = [
     afterImage: "/images/services/sofa-after.jpg",
   },
   {
-    title: "Home Cleaning",
+    title: "Home & Flat Cleaning",
     description: "Come home to spotless. Our thorough top-to-bottom cleaning covers every corner so you can relax in a truly clean space.",
     icon: "home",
     beforeImage: "/images/services/home-before.jpg",
     afterImage: "/images/services/home-after.jpg",
-  },
-  {
-    title: "Kitchen Cleaning",
-    description: "Grease, grime, and buildup don't stand a chance. We deep clean every surface, appliance, and tile until your kitchen sparkles.",
-    icon: "kitchen",
-    beforeImage: "/images/services/kitchen-before.jpg",
-    afterImage: "/images/services/kitchen-after.jpg",
   },
   {
     title: "Carpet Shampooing",
@@ -53,6 +46,13 @@ const featuredServices = [
     icon: "marble",
     beforeImage: "/images/services/marble-before.jpg",
     afterImage: "/images/services/marble-after.jpg",
+  },
+  {
+    title: "Garden Maintenance",
+    description: "Complete garden care including plant maintenance, trimming, cutting, and landscaping services for homes and commercial spaces.",
+    icon: "garden",
+    beforeImage: "/images/services/garden-before.jpg",
+    afterImage: "/images/services/garden-after.jpg",
   },
 ]
 
@@ -121,8 +121,22 @@ export default function HomePage() {
                 <Sparkles className="h-4 w-4" />
                 <span>Premium Cleaning Services</span>
               </div>
+
+              {/* Mobile Image — visible only on small screens */}
+              <div className="block lg:hidden">
+                <div className="rounded-2xl bg-primary/10 p-4">
+                  <div className="relative h-64 w-full overflow-hidden rounded-xl shadow-xl">
+                    <img
+                      src="images/hero.jpg"
+                      alt="Professional cleaning service"
+                      className="h-full w-full object-cover object-[center_80%]"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                <span className="text-balance">Premium Housekeeping Services in Jaipur</span>
+                <span className="text-balance">Bhoomi's Housekeeping Services in Jaipur</span>
               </h1>
               <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
                 Experience spotless spaces with our professional cleaning services. From homes to hotels, we deliver excellence in every corner.
@@ -149,16 +163,16 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
+
+            {/* Desktop Image — visible only on large screens */}
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-2xl bg-primary/10 p-8">
-                <div className="flex h-full items-center justify-center rounded-xl bg-card shadow-xl">
-                  <div className="space-y-4 p-8 text-center">
-                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-                      <Sparkles className="h-10 w-10 text-primary" />
-                    </div>
-                    <h3 className="font-heading text-xl font-semibold text-foreground">Cleanliness Guaranteed</h3>
-                    <p className="text-sm text-muted-foreground">Professional service with attention to every detail</p>
-                  </div>
+                <div className="relative h-full w-full overflow-hidden rounded-xl shadow-xl">
+                  <img
+                    src="images/hero.jpg"
+                    alt="Professional cleaning service"
+                    className="h-full w-full object-cover object-[center_80%]"
+                  />
                 </div>
               </div>
             </div>

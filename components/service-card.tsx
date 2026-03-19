@@ -57,7 +57,7 @@ export function ServiceCard({ title, description, icon, beforeImage, afterImage 
       {/* Before/After Image Section */}
       {hasImages && (
         <div 
-          className="relative h-55 w-full overflow-hidden cursor-pointer"
+          className="relative h-70 w-full overflow-hidden cursor-pointer"
           onMouseEnter={() => setShowAfter(true)}
           onMouseLeave={() => setShowAfter(false)}
           onClick={handleImageClick}
@@ -67,13 +67,13 @@ export function ServiceCard({ title, description, icon, beforeImage, afterImage 
             src={beforeImage}
             alt={`${title} - Before`}
             fill
-            className={`object-cover transition-opacity duration-500 ${showAfter ? 'opacity-0' : 'opacity-100'}`}
+            className={`object-cover object-center transition-opacity duration-500 ${showAfter ? 'opacity-0' : 'opacity-100'}`}
           />
           <Image
             src={afterImage}
             alt={`${title} - After`}
             fill
-            className={`object-cover transition-opacity duration-500 ${showAfter ? 'opacity-100' : 'opacity-0'}`}
+            className={`object-cover object-center transition-opacity duration-500 ${showAfter ? 'opacity-100' : 'opacity-0'}`}
           />
 
           {/* Before/After Label */}
