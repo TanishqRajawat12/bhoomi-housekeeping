@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { 
   Sparkles, 
@@ -12,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "About Us | Bhoomi's Housekeeping",
-  description: "Learn about Bhoomi's Housekeeping - premium cleaning services in Jaipur founded by experienced hotelier Rajendra Singh.",
+  description: "Learn about Bhoomi's Housekeeping - premium cleaning services in Jaipur founded by experienced hotelier Samanvya Singh.",
 }
 
 const values = [
@@ -45,6 +46,32 @@ const milestones = [
   { number: "100%", label: "Satisfaction Rate" },
 ]
 
+const galleryImages = [
+  { src: "/images/about/image1.jpeg", alt: "Our work showcase 1" },
+  { src: "/images/about/image2.jpeg", alt: "Our work showcase 2" },
+  { src: "/images/about/image3.jpeg", alt: "Our work showcase 3" },
+  { src: "/images/about/image4.jpeg", alt: "Our work showcase 4" },
+  { src: "/images/about/image5.jpeg", alt: "Our work showcase 5" },
+  { src: "/images/about/image6.jpeg", alt: "Our work showcase 6" },
+  { src: "/images/about/image7.jpeg", alt: "Our work showcase 1" },
+  { src: "/images/about/image8.jpeg", alt: "Our work showcase 2" },
+  { src: "/images/about/image9.jpeg", alt: "Our work showcase 3" },
+  { src: "/images/about/image10.jpeg", alt: "Our work showcase 4" },
+  { src: "/images/about/image11.jpeg", alt: "Our work showcase 5" },
+  { src: "/images/about/image12.jpeg", alt: "Our work showcase 6" },
+  { src: "/images/about/image13.jpeg", alt: "Our work showcase 1" },
+  { src: "/images/about/image14.jpeg", alt: "Our work showcase 2" },
+  { src: "/images/about/image15.jpeg", alt: "Our work showcase 3" },
+  { src: "/images/about/image16.jpeg", alt: "Our work showcase 4" },
+  { src: "/images/about/image17.jpeg", alt: "Our work showcase 5" },
+  { src: "/images/about/image18.jpeg", alt: "Our work showcase 6" },
+  { src: "/images/about/image24.jpeg", alt: "Our work showcase 2" },
+  { src: "/images/about/image29.jpeg", alt: "Our work showcase 3" },
+  { src: "/images/about/image30.jpeg", alt: "Our work showcase 4" },
+  { src: "/images/about/image32.jpeg", alt: "Our work showcase 5" },
+  { src: "/images/about/image37.jpeg", alt: "Our work showcase 6" },
+]
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
@@ -71,7 +98,7 @@ export default function AboutPage() {
                   {"Bhoomi's Housekeeping was founded with a simple vision: to bring hotel-quality cleanliness and service to every home and business in Jaipur."}
                 </p>
                 <p className="leading-relaxed">
-                  {"Our founder, Rajendra Singh, brings over a decade of experience in the hospitality industry, having worked with some of Jaipur's finest hotels. This background in premium hospitality services shaped our commitment to excellence and attention to detail."}
+                  {"Our founder, Samanvya Singh, brings over a decade of experience in the hospitality industry, having worked with some of Jaipur's finest hotels. This background in premium hospitality services shaped our commitment to excellence and attention to detail."}
                 </p>
                 <p className="leading-relaxed">
                   {"Today, we serve a diverse clientele including luxury hotels, restaurants, corporate offices, and residential homes. Our team of trained professionals uses advanced cleaning techniques and eco-friendly products to deliver results that exceed expectations."}
@@ -88,9 +115,9 @@ export default function AboutPage() {
               <div className="aspect-[4/3] rounded-2xl bg-primary/10 p-6">
                 <div className="flex h-full flex-col items-center justify-center rounded-xl bg-card p-8 text-center shadow-lg">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary">
-                    <span className="font-heading text-2xl font-bold text-primary-foreground">RS</span>
+                    <span className="font-heading text-2xl font-bold text-primary-foreground">SS</span>
                   </div>
-                  <h3 className="mb-2 font-heading text-xl font-semibold text-foreground">Rajendra Singh</h3>
+                  <h3 className="mb-2 font-heading text-xl font-semibold text-foreground">Samanvya Singh</h3>
                   <p className="mb-4 text-sm text-muted-foreground">Founder & Director</p>
                   <p className="text-sm italic text-muted-foreground">
                     {'"Excellence in cleanliness is not just our job, it\'s our passion."'}
@@ -116,8 +143,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Our Work Gallery */}
       <section className="py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-heading text-3xl font-bold text-foreground sm:text-4xl">Our Work</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              A glimpse of the spaces we have transformed for our clients across Jaipur.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {galleryImages.map((image, index) => (
+              <div
+                key={index}
+                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="bg-secondary py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 font-heading text-3xl font-bold text-foreground sm:text-4xl">Our Values</h2>
@@ -140,7 +195,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-secondary py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 font-heading text-3xl font-bold text-foreground sm:text-4xl">Our Mission</h2>
@@ -165,7 +220,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20">
+      <section className="bg-secondary py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mb-4 font-heading text-3xl font-bold text-foreground">Ready to Experience the Difference?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
