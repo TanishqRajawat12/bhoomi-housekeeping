@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Calendar, Clock, CheckCircle2, Phone, MessageCircle } from "lucide-react"
+import { Calendar, Clock, Phone, MessageCircle } from "lucide-react"
 
 const services = [
   "Sofa Cleaning",
@@ -28,6 +28,8 @@ const services = [
   "Pest Control Services",
 ]
 
+const WHATSAPP_NUMBER = "917014337079"
+
 export default function BookingPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -38,41 +40,47 @@ export default function BookingPage() {
     time: "",
     message: "",
   })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const buildWhatsAppURL = () => {
+    // Format date nicely if provided
+    const formattedDate = formData.date
+      ? new Date(formData.date).toLocaleDateString("en-IN", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      : ""
+
+    // Format time nicely if provided
+    const formattedTime = formData.time
+      ? new Date(`1970-01-01T${formData.time}`).toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        })
+      : ""
+
+    const lines = [
+      "Hello! I'd like to book a service. Here are my details:",
+      "",
+      `👤 *Name:* ${formData.name}`,
+      `📞 *Phone:* ${formData.phone}`,
+      `📍 *Address:* ${formData.address}`,
+      `🧹 *Service:* ${formData.service}`,
+      `📅 *Date:* ${formattedDate}`,
+      `🕐 *Time:* ${formattedTime}`,
+      formData.message ? `📝 *Message:* ${formData.message}` : "",
+    ]
+      .filter((line) => line !== "")
+      .join("\n")
+
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-  }
-
-  const handleWhatsAppRedirect = () => {
-    const message = `Hi, I want to book a service.%0A%0AName: ${formData.name}%0AService: ${formData.service}%0ADate: ${formData.date}%0ATime: ${formData.time}%0AAddress: ${formData.address}%0AMessage: ${formData.message}`
-    window.open(`https://wa.me/917014337079?text=${message}`, "_blank")
-  }
-
-  if (isSubmitted) {
-    return (
-      <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 py-16">
-        <div className="mx-auto max-w-md text-center">
-          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-            <CheckCircle2 className="h-8 w-8 text-primary" />
-          </div>
-          <h1 className="mb-4 font-heading text-3xl font-bold text-foreground">Booking Request Received!</h1>
-          <p className="mb-8 text-muted-foreground">
-            {"Thank you for your booking request. Our team will contact you shortly to confirm your appointment."}
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button onClick={handleWhatsAppRedirect}>
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Chat on WhatsApp
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/">Back to Home</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    )
+    window.open(buildWhatsAppURL(), "_blank")
   }
 
   return (
@@ -81,9 +89,12 @@ export default function BookingPage() {
       <section className="bg-secondary py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 font-heading text-4xl font-bold text-foreground sm:text-5xl">Book a Service</h1>
+            <h1 className="mb-6 font-heading text-4xl font-bold text-foreground sm:text-5xl">
+              Book a Service
+            </h1>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Schedule your cleaning service in just a few steps. Fill out the form below and we will get back to you promptly.
+              Fill out the form below and we'll open WhatsApp with your booking
+              details pre-filled — no waiting, instant confirmation.
             </p>
           </div>
         </div>
@@ -210,15 +221,23 @@ export default function BookingPage() {
                 />
               </div>
 
-              {/* Submit Button */}
-              <Button type="submit" size="lg" className="w-full">
-                Submit Booking Request
+              {/* Submit Button — opens WhatsApp directly */}
+              <Button type="submit" size="lg" className="w-full bg-[#25D366] hover:bg-[#22c55e] text-white">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Send Booking via WhatsApp
               </Button>
+
+              <p className="text-center text-xs text-muted-foreground">
+                Clicking the button will open WhatsApp with your booking details
+                pre-filled. Just hit send!
+              </p>
             </form>
 
             {/* Alternative Contact */}
             <div className="mt-8 border-t border-border pt-8">
-              <p className="mb-4 text-center text-sm text-muted-foreground">Or reach us directly</p>
+              <p className="mb-4 text-center text-sm text-muted-foreground">
+                Or reach us directly
+              </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <a
                   href="tel:+917014337079"
@@ -228,7 +247,7 @@ export default function BookingPage() {
                   Call Us
                 </a>
                 <a
-                  href="https://wa.me/917014337079?text=Hi%20I%20want%20to%20book%20a%20service"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I want to book a service.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#22c55e]"
