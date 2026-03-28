@@ -2,18 +2,19 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { 
-  Sparkles, 
-  Shield, 
-  Heart, 
+import {
+  Sparkles,
+  Shield,
+  Heart,
   Award,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About Us | Bhoomi's Housekeeping",
-  description: "Learn about Bhoomi's Housekeeping - premium cleaning services in Jaipur founded by experienced hotelier Samanvya Singh.",
+  description:
+    "Learn about Bhoomi's Housekeeping - premium cleaning services in Jaipur founded by experienced hotelier Samanvya Singh.",
 }
 
 const values = [
@@ -46,30 +47,52 @@ const milestones = [
   { number: "100%", label: "Satisfaction Rate" },
 ]
 
-const galleryImages = [
-  { src: "/images/about/image1.jpeg", alt: "Our work showcase 1" },
-  { src: "/images/about/image2.jpeg", alt: "Our work showcase 2" },
-  { src: "/images/about/image3.jpeg", alt: "Our work showcase 3" },
-  { src: "/images/about/image4.jpeg", alt: "Our work showcase 4" },
-  { src: "/images/about/image5.jpeg", alt: "Our work showcase 5" },
-  { src: "/images/about/image6.jpeg", alt: "Our work showcase 6" },
-  { src: "/images/about/image7.jpeg", alt: "Our work showcase 1" },
-  { src: "/images/about/image8.jpeg", alt: "Our work showcase 2" },
-  { src: "/images/about/image9.jpeg", alt: "Our work showcase 3" },
-  { src: "/images/about/image10.jpeg", alt: "Our work showcase 4" },
-  { src: "/images/about/image11.jpeg", alt: "Our work showcase 5" },
-  { src: "/images/about/image12.jpeg", alt: "Our work showcase 6" },
-  { src: "/images/about/image13.jpeg", alt: "Our work showcase 1" },
-  { src: "/images/about/image14.jpeg", alt: "Our work showcase 2" },
-  { src: "/images/about/image15.jpeg", alt: "Our work showcase 3" },
-  { src: "/images/about/image16.jpeg", alt: "Our work showcase 4" },
-  { src: "/images/about/image17.jpeg", alt: "Our work showcase 5" },
-  { src: "/images/about/image18.jpeg", alt: "Our work showcase 6" },
-  { src: "/images/about/image24.jpeg", alt: "Our work showcase 2" },
-  { src: "/images/about/image29.jpeg", alt: "Our work showcase 3" },
-  { src: "/images/about/image30.jpeg", alt: "Our work showcase 4" },
-  { src: "/images/about/image32.jpeg", alt: "Our work showcase 5" },
-  { src: "/images/about/image37.jpeg", alt: "Our work showcase 6" },
+// Helper to generate image paths for a range (inclusive, 1-indexed)
+function imgRange(start: number, end: number) {
+  return Array.from({ length: end - start + 1 }, (_, i) => ({
+    src: `/images/about/image${start + i}.jpeg`,
+    alt: `Work showcase ${start + i}`,
+  }))
+}
+
+const galleryCategories = [
+  {
+    id: "hotel-restaurant",
+    label: "Hotel & Restaurant Cleaning",
+    emoji: "🏨",
+    description: "Hospitality-grade deep cleaning for hotels, restaurants, and commercial kitchens.",
+    images: imgRange(1, 9),
+  },
+  {
+    id: "home-flat",
+    label: "Home & Flat Cleaning",
+    emoji: "🏠",
+    description: "Regular and deep cleaning services tailored for residences and apartments.",
+    images: imgRange(10, 14),
+  },
+  {
+    id: "garden",
+    label: "Garden Maintenance",
+    emoji: "🌿",
+    description: "Lawn care, pruning, and outdoor space upkeep to keep your garden pristine.",
+    images: [
+      { src: "/images/about/image24.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/image29.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/image30.jpeg", alt: "Work showcase 30" },
+      { src: "/images/about/image32.jpeg", alt: "Work showcase 32" },
+      { src: "/images/about/image37.jpeg", alt: "Work showcase 37" },
+    ],
+  },
+  {
+    id: "sofa-shampooing",
+    label: "Sofa Shampooing",
+    emoji: "🛋️",
+    description: "Professional upholstery cleaning to restore sofas, chairs, and fabric surfaces.",
+    images: [
+      { src: "/images/about/image1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/image3.jpeg", alt: "Work showcase 29" },
+    ],
+  },
 ]
 
 export default function AboutPage() {
@@ -143,28 +166,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Work Gallery */}
+      {/* Our Work Gallery — Categorised */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          {/* Section header */}
+          <div className="mb-14 text-center">
             <h2 className="mb-4 font-heading text-3xl font-bold text-foreground sm:text-4xl">Our Work</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               A glimpse of the spaces we have transformed for our clients across Jaipur.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((image, index) => (
-              <div
-                key={index}
-                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10" />
+
+          {/* Category blocks */}
+          <div className="space-y-16">
+            {galleryCategories.map((category) => (
+              <div key={category.id}>
+                {/* Category header */}
+                <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 className="font-heading text-2xl font-bold text-foreground">
+                      <span className="mr-2">{category.emoji}</span>
+                      {category.label}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{category.description}</p>
+                  </div>
+                  <span className="shrink-0 text-sm text-muted-foreground">
+                    {category.images.length} photo{category.images.length !== 1 ? "s" : ""}
+                  </span>
+                </div>
+
+                {/* Divider */}
+                <div className="mb-6 h-px bg-border" />
+
+                {/* Image grid */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {category.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card"
+                    >
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10" />
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -222,7 +272,9 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="bg-secondary py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mb-4 font-heading text-3xl font-bold text-foreground">Ready to Experience the Difference?</h2>
+          <h2 className="mb-4 font-heading text-3xl font-bold text-foreground">
+            Ready to Experience the Difference?
+          </h2>
           <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
             {"Join hundreds of satisfied clients who trust Bhoomi's Housekeeping for their cleaning needs."}
           </p>
