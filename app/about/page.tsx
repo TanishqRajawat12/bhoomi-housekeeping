@@ -80,7 +80,7 @@ const galleryCategories = [
       { src: "/images/about/image29.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/image30.jpeg", alt: "Work showcase 30" },
       { src: "/images/about/image32.jpeg", alt: "Work showcase 32" },
-      { src: "/images/about/image37.jpeg", alt: "Work showcase 37" },
+      { src: "/images/about/abugm1.jpeg", alt: "Work showcase 37" },
     ],
   },
   {
@@ -91,6 +91,19 @@ const galleryCategories = [
     images: [
       { src: "/images/about/image1.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/image3.jpeg", alt: "Work showcase 29" },
+    ],
+  },
+  {
+    id: "bathroom-cleaning",
+    label: "Bathroom Cleaning",
+    emoji: "🛁",
+    description: "Professional bathroom cleaning to restore premium feel.",
+    images: [
+      { src: "/images/about/abubc1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/abubc2.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/abubc3.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/abubc4.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/abubc5.jpeg", alt: "Work showcase 29" },
     ],
   },
 ]
