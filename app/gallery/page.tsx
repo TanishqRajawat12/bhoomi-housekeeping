@@ -19,12 +19,12 @@ function imgRange(start: number, end: number, category: string) {
 }
 
 const galleryImages = [
-  ...imgRange(1, 4, "Solar Panel Cleaning"),
-  ...imgRange(5, 12, "Car Cleaning"),
-  ...imgRange(13, 17, "Sofa Shampooing"),
-  ...imgRange(18, 22, "Carpet Shampooing"),
-  ...imgRange(23, 26, "Marble & Floor Polishing"),
-  ...imgRange(27, 31, "Specialised Cleaning"),
+  ...imgRange(1, 1, "Solar Panel Cleaning"),
+  ...imgRange(5, 5, "Car Cleaning"),
+  ...imgRange(13, 13, "Sofa Shampooing"),
+  ...imgRange(19, 19, "Carpet Shampooing"),
+  ...imgRange(23, 23, "Marble & Floor Polishing"),
+  ...imgRange(27, 27, "Specialised Cleaning"),
 ]
 
 const CATEGORIES = ["All", ...Array.from(new Set(galleryImages.map((img) => img.category)))]

@@ -20,7 +20,7 @@ const services = [
     title: "Carpet Shampooing",
     description: "Professional carpet and rug cleaning using advanced shampooing techniques. Remove deep-seated dirt and restore carpet fibers.",
     icon: "carpet",
-    afterImage: "/images/services/osimage7.jpeg",
+    afterImage: "/images/services/carpet-after.jpg",
   },
   {
     title: "Car Seat Cleaning",
