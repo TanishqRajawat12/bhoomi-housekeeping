@@ -13,7 +13,7 @@ import {
 
 const featuredServices = [
   {
-    title: "Sofa Cleaning",
+    title: "Sofa Shampooing",
     description: "Deep cleaning and sanitization for all types of sofas and upholstery. We remove stains, dust, and allergens to restore your furniture's freshness.",
     icon: "sofa",
     afterImage: "/images/services/osimage6.jpeg",
@@ -25,7 +25,7 @@ const featuredServices = [
     afterImage: "/images/services/carpet-after.jpg",
   },
   {
-    title: "Car Seat Cleaning",
+    title: "Car Seat Dry Clean",
     description: "Thorough cleaning and conditioning of car seats and interiors. Keep your vehicle fresh and hygienic.",
     icon: "car",
     afterImage: "/images/services/car-after.jpg",

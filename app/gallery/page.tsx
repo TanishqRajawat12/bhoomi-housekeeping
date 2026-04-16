@@ -5,31 +5,30 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 
-// ─── Image data ────────────────────────────────────────────────────────────────
-// Adjust category assignments to match your actual photos.
-// imgRange(start, end, category) generates entries for image{start}.jpeg … image{end}.jpeg
-
 function imgRange(start: number, end: number, category: string) {
   return Array.from({ length: end - start + 1 }, (_, i) => ({
     id: start + i,
-    src: `/images/gallery/image${start + i}.jpeg`,
+    src: `/images/gallery/gallery${start + i}.jpeg`,
     alt: `${category} – photo ${start + i}`,
     category,
   }))
 }
 
 const galleryImages = [
-  ...imgRange(1, 1, "Solar Panel Cleaning"),
-  ...imgRange(5, 5, "Car Cleaning"),
-  ...imgRange(13, 13, "Sofa Shampooing"),
-  ...imgRange(19, 19, "Carpet Shampooing"),
-  ...imgRange(23, 23, "Marble & Floor Polishing"),
-  ...imgRange(27, 27, "Specialised Cleaning"),
+  ...imgRange(10, 10, "Sofa Shampooing"),
+  ...imgRange(8, 8, "Carpet Shampooing"),
+  ...imgRange(9, 9, "Car Seat Dry Clean"),
+  ...imgRange(6, 6, "Home & Flat Cleaning"),
+  ...imgRange(7, 7, "Bathroom Cleaning"),
+  ...imgRange(4, 4, "Solar Panel Cleaning"),
+  ...imgRange(5, 5, "Pest Control"),
+  ...imgRange(3, 3, "Garden Maintenance"),
+  ...imgRange(2, 2, "Wooden Floor Polishing"),
+  ...imgRange(1, 1, "Marble Polishing"),
 ]
 
 const CATEGORIES = ["All", ...Array.from(new Set(galleryImages.map((img) => img.category)))]
 
-// ─── Component ─────────────────────────────────────────────────────────────────
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [lightboxId, setLightboxId] = useState<number | null>(null)
@@ -57,7 +56,6 @@ export default function GalleryPage() {
     [currentIndex, filtered]
   )
 
-  // Keyboard navigation
   useEffect(() => {
     if (lightboxId === null) return
     const handler = (e: KeyboardEvent) => {
@@ -85,30 +83,6 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* ── Category filter ───────────────────────────────────────────────────── 
-      <section className="border-b border-border py-6">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => {
-                  setSelectedCategory(cat)
-                  setLightboxId(null)
-                }}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  selectedCategory === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-muted-foreground hover:bg-secondary/80"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-*/}
       {/* ── Grid ─────────────────────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -129,8 +103,8 @@ export default function GalleryPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Category overlay on hover */}
-                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {/* ✅ Solid black overlay — name always readable */}
+                  <div className="absolute inset-0 flex items-end bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <p className="p-3 text-sm font-medium text-white">{image.category}</p>
                   </div>
                 </button>
@@ -143,13 +117,13 @@ export default function GalleryPage() {
       {/* ── Lightbox ─────────────────────────────────────────────────────────── */}
       {lightboxId !== null && currentImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={closeLightbox}
         >
           {/* Close */}
           <button
             onClick={closeLightbox}
-            className="absolute right-4 top-4 z-10 rounded-full bg-background/10 p-2 text-white transition-colors hover:bg-background/20"
+            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
             aria-label="Close"
           >
             <X className="h-6 w-6" />
@@ -158,7 +132,7 @@ export default function GalleryPage() {
           {/* Prev */}
           <button
             onClick={(e) => { e.stopPropagation(); navigate("prev") }}
-            className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/10 p-2 text-white transition-colors hover:bg-background/20"
+            className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
             aria-label="Previous image"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -167,7 +141,7 @@ export default function GalleryPage() {
           {/* Next */}
           <button
             onClick={(e) => { e.stopPropagation(); navigate("next") }}
-            className="absolute right-14 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/10 p-2 text-white transition-colors hover:bg-background/20"
+            className="absolute right-14 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
             aria-label="Next image"
           >
             <ChevronRight className="h-6 w-6" />

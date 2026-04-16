@@ -57,6 +57,63 @@ function imgRange(start: number, end: number) {
 
 const galleryCategories = [
   {
+    id: "sofa-shampooing",
+    label: "Sofa Shampooing",
+    emoji: "🛋️",
+    description: "Professional upholstery cleaning to restore sofas, chairs, and fabric surfaces.",
+    images: [
+      { src: "/images/about/image1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/image3.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/sofa1.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/sofa2.jpeg", alt: "Work showcase 29" },
+    ],
+  },
+  {
+    id: "carpet-shampooing",
+    label: "Carpet Shampooing",
+    emoji: "🀄️",
+    description: "Hospitality-grade deep cleaning for carpets and rugs.",
+    images: [
+      { src: "/images/about/carpet1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/carpet2.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/carpet3.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/carpet4.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/carpet5.jpeg", alt: "Work showcase 29" },
+    ],
+  },
+  {
+    id: "car-shampooing",
+    label: "Car Seat Dry Clean",
+    emoji: "🚗",
+    description: "Deep cleaning for car seats and upholestery.",
+    images: [
+      { src: "/images/about/car1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/car2.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/car3.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/car4.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/car5.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/car7.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/car8.jpeg", alt: "Work showcase 29" },
+    ],
+  },
+  {
+    id: "wooden-restaurant",
+    label: "Wooden & Marble Polishing",
+    emoji: "🏨",
+    description: "Hospitality-grade deep polishing for hotels, restaurants, and homes.",
+    images: [
+      { src: "/images/about/wood1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/wood2.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/marble1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/marble2.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/wood3.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/wood4.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/wood5.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/wood6.jpeg", alt: "Work showcase 24" },
+
+    ],
+  },
+  {
     id: "hotel-restaurant",
     label: "Hotel & Restaurant Cleaning",
     emoji: "🏨",
@@ -68,7 +125,20 @@ const galleryCategories = [
     label: "Home & Flat Cleaning",
     emoji: "🏠",
     description: "Regular and deep cleaning services tailored for residences and apartments.",
-    images: imgRange(10, 14),
+    images:
+    [
+      { src: "/images/about/homeflat1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/homeflat2.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/homeflat3.jpeg", alt: "Work showcase 30" },
+      { src: "/images/about/homeflat4.jpeg", alt: "Work showcase 32" },
+      { src: "/images/about/homeflat5.jpeg", alt: "Work showcase 37" },
+      { src: "/images/about/image10.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/image11.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/image12.jpeg", alt: "Work showcase 30" },
+      { src: "/images/about/image13.jpeg", alt: "Work showcase 32" },
+      { src: "/images/about/image14.jpeg", alt: "Work showcase 32" },
+      { src: "/images/about/abugm1.jpeg", alt: "Work showcase 37" },
+    ],
   },
   {
     id: "garden",
@@ -76,6 +146,11 @@ const galleryCategories = [
     emoji: "🌿",
     description: "Lawn care, pruning, and outdoor space upkeep to keep your garden pristine.",
     images: [
+      { src: "/images/about/garden1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/garden2.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/garden3.jpeg", alt: "Work showcase 30" },
+      { src: "/images/about/garden4.jpeg", alt: "Work showcase 32" },
+      { src: "/images/about/garden5.jpeg", alt: "Work showcase 37" },
       { src: "/images/about/image24.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/image29.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/image30.jpeg", alt: "Work showcase 30" },
@@ -84,26 +159,17 @@ const galleryCategories = [
     ],
   },
   {
-    id: "sofa-shampooing",
-    label: "Sofa Shampooing",
-    emoji: "🛋️",
-    description: "Professional upholstery cleaning to restore sofas, chairs, and fabric surfaces.",
-    images: [
-      { src: "/images/about/image1.jpeg", alt: "Work showcase 24" },
-      { src: "/images/about/image3.jpeg", alt: "Work showcase 29" },
-    ],
-  },
-  {
     id: "bathroom-cleaning",
     label: "Bathroom Cleaning",
     emoji: "🛁",
     description: "Professional bathroom cleaning to restore premium feel.",
     images: [
-      { src: "/images/about/abubc1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/bathroom.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/abubc2.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/abubc3.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/abubc4.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/abubc5.jpeg", alt: "Work showcase 29" },
+      { src: "/images/about/abubc1.jpeg", alt: "Work showcase 29" },
     ],
   },
 ]

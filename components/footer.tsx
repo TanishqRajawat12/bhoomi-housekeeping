@@ -5,9 +5,14 @@ import { Phone, MapPin, Mail } from "lucide-react"
 const services = [
   "Sofa Cleaning",
   "Carpet Shampooing",
-  "Home Cleaning",
-  "Kitchen Cleaning",
-  "Pest Control",
+  "Car Seat Dry Clean",
+  "Home & Flat Cleaning",
+  "Bathroom Cleaning",
+  "Solar Panel Cleaning",
+  "Marble & Granite Polishing",
+  "Wooden Floor Polishing",
+  "Garden Maintenance",
+  "Pest Control Services",
 ]
 
 const quickLinks = [
