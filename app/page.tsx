@@ -22,7 +22,7 @@ const featuredServices = [
     title: "Carpet Shampooing",
     description: "Professional carpet and rug cleaning using advanced shampooing techniques. Remove deep-seated dirt and restore carpet fibers.",
     icon: "carpet",
-    afterImage: "/images/services/carpet-after.jpg",
+    afterImage: "/images/services/osimage7.jpeg",
   },
   {
     title: "Car Seat Dry Clean",
@@ -68,7 +68,7 @@ const featuredServices = [
   },
   {
     title: "Pest Control Services",
-    description: "Safe and effective pest control solutions for homes and businesses. We handle termites, cockroaches, rodents, and more.",
+    description: "Safe and effective pest control solutions for homes and businesses. We handle termites, cockroaches, rodents, and more. By PMP",
     icon: "pest",
     afterImage: "/images/services/osimage4.jpeg",
   },
