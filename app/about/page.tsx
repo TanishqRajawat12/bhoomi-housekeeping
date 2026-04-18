@@ -65,7 +65,6 @@ const galleryCategories = [
       { src: "/images/about/image1.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/image3.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/sofa1.jpeg", alt: "Work showcase 29" },
-      { src: "/images/about/sofa2.jpeg", alt: "Work showcase 29" },
     ],
   },
   {
@@ -77,8 +76,6 @@ const galleryCategories = [
       { src: "/images/about/carpet1.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/carpet2.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/carpet3.jpeg", alt: "Work showcase 29" },
-      { src: "/images/about/carpet4.jpeg", alt: "Work showcase 29" },
-      { src: "/images/about/carpet5.jpeg", alt: "Work showcase 29" },
     ],
   },
   {
@@ -93,23 +90,32 @@ const galleryCategories = [
       { src: "/images/about/car4.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/car5.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/car7.jpeg", alt: "Work showcase 29" },
-      { src: "/images/about/car8.jpeg", alt: "Work showcase 29" },
     ],
   },
   {
     id: "wooden-restaurant",
-    label: "Wooden & Marble Polishing",
+    label: "Wooden Floor Polishing",
     emoji: "🏨",
     description: "Hospitality-grade deep polishing for hotels, restaurants, and homes.",
     images: [
       { src: "/images/about/wood1.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/wood2.jpeg", alt: "Work showcase 24" },
-      { src: "/images/about/marble1.jpeg", alt: "Work showcase 24" },
-      { src: "/images/about/marble2.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/wood3.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/wood4.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/wood5.jpeg", alt: "Work showcase 24" },
       { src: "/images/about/wood6.jpeg", alt: "Work showcase 24" },
+
+    ],
+  },
+  {
+    id: "marble-restaurant",
+    label: "Marble Floor Polishing",
+    emoji: "🏨",
+    description: "Hospitality-grade deep polishing for hotels, restaurants, and homes.",
+    images: [
+      { src: "/images/about/marble1.jpeg", alt: "Work showcase 24" },
+      { src: "/images/about/marble2.jpeg", alt: "Work showcase 24" },
+      { src: "/images/services/marble-after.jpg", alt: "Work showcase 24" },
 
     ],
   },
@@ -136,8 +142,6 @@ const galleryCategories = [
       { src: "/images/about/image11.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/image12.jpeg", alt: "Work showcase 30" },
       { src: "/images/about/image13.jpeg", alt: "Work showcase 32" },
-      { src: "/images/about/image14.jpeg", alt: "Work showcase 32" },
-      { src: "/images/about/abugm1.jpeg", alt: "Work showcase 37" },
     ],
   },
   {
@@ -155,7 +159,6 @@ const galleryCategories = [
       { src: "/images/about/image29.jpeg", alt: "Work showcase 29" },
       { src: "/images/about/image30.jpeg", alt: "Work showcase 30" },
       { src: "/images/about/image32.jpeg", alt: "Work showcase 32" },
-      { src: "/images/about/abugm1.jpeg", alt: "Work showcase 37" },
     ],
   },
   {
