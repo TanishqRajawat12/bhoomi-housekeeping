@@ -16,6 +16,7 @@ function imgRange(start: number, end: number, category: string) {
 
 const galleryImages = [
   ...imgRange(10, 10, "Sofa Shampooing"),
+  ...imgRange(11, 11, "Sofa Shampooing"),
   ...imgRange(8, 8, "Carpet Shampooing"),
   ...imgRange(9, 9, "Car Seat Dry Clean"),
   ...imgRange(6, 6, "Home & Flat Cleaning"),
@@ -25,6 +26,7 @@ const galleryImages = [
   ...imgRange(3, 3, "Garden Maintenance"),
   ...imgRange(2, 2, "Wooden Floor Polishing"),
   ...imgRange(1, 1, "Marble Polishing"),
+  ...imgRange(12, 12, "General Cleaning"),
 ]
 
 const CATEGORIES = ["All", ...Array.from(new Set(galleryImages.map((img) => img.category)))]
@@ -141,7 +143,7 @@ export default function GalleryPage() {
           {/* Next */}
           <button
             onClick={(e) => { e.stopPropagation(); navigate("next") }}
-            className="absolute right-14 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
             aria-label="Next image"
           >
             <ChevronRight className="h-6 w-6" />
@@ -149,10 +151,10 @@ export default function GalleryPage() {
 
           {/* Image */}
           <div
-            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col items-center gap-3"
+            className="relative flex max-h-[95vh] w-full max-w-6xl flex-col items-center gap-3"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-[80vh] w-full overflow-hidden rounded-xl">
+            <div className="relative h-[88vh] w-full overflow-hidden rounded-xl">
               <Image
                 src={currentImage.src}
                 alt={currentImage.alt}
@@ -162,7 +164,6 @@ export default function GalleryPage() {
                 priority
               />
             </div>
-
             {/* Caption + counter */}
             <div className="flex items-center gap-3 text-white/80">
               <span className="text-sm font-medium">{currentImage.category}</span>

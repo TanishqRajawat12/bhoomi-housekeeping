@@ -85,6 +85,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="tel:+919251137079" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>+91 92511 37079</span>
+                </a>
+              </li>
+              <li>
                 <a href="mailto:info@bhoomihousekeeping.com" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" />
                   <span>info@bhoomihousekeeping.com</span>
