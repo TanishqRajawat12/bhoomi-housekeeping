@@ -154,7 +154,7 @@ export default function HomePage() {
               </div>
 
               <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                <span className="text-balance">Bhoomi's Housekeeping Services in Jaipur</span>
+                <span className="text-balance">Bhoomi's Housekeeping Services<br></br> Jaipur</span>
               </h1>
               <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
                 Experience spotless spaces with our professional cleaning services. From homes to hotels, we deliver excellence in every corner.
