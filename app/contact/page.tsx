@@ -19,30 +19,30 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+91 70143 37079",
-    href: "tel:+917014337079",
+    value: "+91 92511 37079",
+    href: "tel:+919251137079",
     description: "Call us for quick inquiries",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    value: "+91 70143 37079",
-    href: "https://wa.me/917014337079?text=Hi%20I%20want%20to%20book%20a%20service",
+    value: "+91 92511 37079",
+    href: "https://wa.me/919251137079?text=Hi%20I%20want%20to%20book%20a%20service",
     description: "Chat with us for bookings",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@bhoomihousekeeping.com",
-    href: "mailto:info@bhoomihousekeeping.com",
+    value: "info@bhoomihousekeeping.in",
+    href: "mailto:info@bhoomihousekeeping.in",
     description: "Send us your queries",
   },
   {
     icon: Clock,
     title: "Working Hours",
-    value: "Mon - Sat: 8AM - 8PM",
+    value: "24/7",
     href: null,
-    description: "Sunday by appointment",
+    description: "Night services also available",
   },
 ]
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
                     </Link>
                   </Button>
                   <a
-                    href="https://wa.me/917014337079?text=Hi%20I%20want%20to%20book%20a%20service"
+                    href="https://wa.me/919251137079?text=Hi%20I%20want%20to%20book%20a%20service"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 py-2 font-medium text-white transition-colors hover:bg-[#22c55e]"
@@ -137,11 +137,11 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <a
-                  href="tel:+917014337079"
+                  href="tel:+919251137079"
                   className="flex items-center justify-center gap-2 rounded-md border border-border bg-card px-4 py-3 font-medium transition-colors hover:bg-secondary"
                 >
                   <Phone className="h-4 w-4" />
-                  Call: +91 70143 37079
+                  Call: +91 92511 37079
                 </a>
               </div>
             </div>

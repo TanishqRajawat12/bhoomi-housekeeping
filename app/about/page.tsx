@@ -15,13 +15,6 @@ const values = [
   { icon: Award, title: "Quality", description: "Premium products and professional techniques deliver superior results every time." },
 ]
 
-const milestones = [
-  { number: "500+", label: "Happy Clients" },
-  { number: "10+", label: "Years Experience" },
-  { number: "1000+", label: "Projects Completed" },
-  { number: "100%", label: "Satisfaction Rate" },
-]
-
 type GalleryImage = { src: string; alt: string }
 type GalleryCategory = {
   id: string
@@ -157,15 +150,17 @@ const galleryCategories: GalleryCategory[] = [
   },
 ]
 
+const teamPhotos = [
+  { src: "/images/about/mtt1.png", alt: "Team member" },
+  { src: "/images/about/mtt2.png", alt: "Team member" },
+]
+
 export default function AboutPage() {
   const [lightbox, setLightbox] = useState<{ catId: string; index: number } | null>(null)
-
   const currentCat = lightbox ? galleryCategories.find((c) => c.id === lightbox.catId) : null
   const currentImage = currentCat ? currentCat.images[lightbox!.index] : null
   const total = currentCat ? currentCat.images.length : 0
-
   const close = () => setLightbox(null)
-
   const navigate = useCallback(
     (dir: "prev" | "next") => {
       if (!lightbox || !currentCat) return
@@ -177,7 +172,6 @@ export default function AboutPage() {
     },
     [lightbox, currentCat, total]
   )
-
   useEffect(() => {
     if (!lightbox) return
     const handler = (e: KeyboardEvent) => {
@@ -191,7 +185,6 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col">
-
       {/* Hero */}
       <section className="bg-secondary py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -246,14 +239,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary py-16">
+      {/* Team Photos */}
+      <section className="bg-secondary py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {milestones.map((milestone) => (
-              <div key={milestone.label} className="text-center">
-                <p className="font-heading text-4xl font-bold text-primary-foreground">{milestone.number}</p>
-                <p className="mt-2 text-primary-foreground/80">{milestone.label}</p>
+          <div className="mb-12 text-center">
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">Meet the Team</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
+            {teamPhotos.map((photo, index) => (
+              <div
+                key={index}
+                className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover object-center"
+                />
               </div>
             ))}
           </div>
@@ -269,7 +272,6 @@ export default function AboutPage() {
               A glimpse of the spaces we have transformed for our clients across Jaipur.
             </p>
           </div>
-
           <div className="space-y-16">
             {galleryCategories.map((category) => (
               <div key={category.id}>
@@ -285,9 +287,7 @@ export default function AboutPage() {
                     {category.images.length} photo{category.images.length !== 1 ? "s" : ""}
                   </span>
                 </div>
-
                 <div className="mb-6 h-px bg-border" />
-
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {category.images.map((image, index) => (
                     <button
@@ -390,7 +390,6 @@ export default function AboutPage() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={close}
         >
-          {/* Close */}
           <button
             onClick={close}
             className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
@@ -398,8 +397,6 @@ export default function AboutPage() {
           >
             <X className="h-6 w-6" />
           </button>
-
-          {/* Prev */}
           <button
             onClick={(e) => { e.stopPropagation(); navigate("prev") }}
             className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
@@ -407,8 +404,6 @@ export default function AboutPage() {
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-
-          {/* Next */}
           <button
             onClick={(e) => { e.stopPropagation(); navigate("next") }}
             className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
@@ -416,8 +411,6 @@ export default function AboutPage() {
           >
             <ChevronRight className="h-6 w-6" />
           </button>
-
-          {/* Image */}
           <div
             className="relative flex max-h-[95vh] w-full max-w-6xl flex-col items-center gap-3"
             onClick={(e) => e.stopPropagation()}
@@ -442,7 +435,6 @@ export default function AboutPage() {
           </div>
         </div>
       )}
-
     </div>
   )
 }

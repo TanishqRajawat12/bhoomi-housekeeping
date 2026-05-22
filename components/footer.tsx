@@ -12,7 +12,7 @@ const services = [
   "Marble & Granite Polishing",
   "Wooden Floor Polishing",
   "Garden Maintenance",
-  "Pest Control Services",
+  "Pest Control Services by PMP Services",
 ]
 
 const quickLinks = [
@@ -79,21 +79,21 @@ export function Footer() {
             <h3 className="mb-4 font-heading text-base font-semibold text-foreground">Contact Us</h3>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+917014337079" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <Phone className="mt-0.5 h-4 w-4 shrink-0" />
-                  <span>+91 70143 37079</span>
-                </a>
-              </li>
-              <li>
                 <a href="tel:+919251137079" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0" />
                   <span>+91 92511 37079</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@bhoomihousekeeping.com" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <a href="tel:+917014337079" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>+91 70143 37079</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@bhoomihousekeeping.in" className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground">
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                  <span>info@bhoomihousekeeping.com</span>
+                  <span>info@bhoomihousekeeping.in</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
