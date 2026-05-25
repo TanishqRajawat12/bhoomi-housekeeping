@@ -40,7 +40,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Working Hours",
-    value: "24/7",
+    value: "8am to 8pm",
     href: null,
     description: "Night services also available",
   },

@@ -243,7 +243,7 @@ export default function AboutPage() {
       <section className="bg-secondary py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">Meet the Team</h2>
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">Team</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
             {teamPhotos.map((photo, index) => (
